@@ -6,6 +6,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      
       colors: {
         background: "#050505", // Deepest charcoal 
         surface: "#0a0a0a",    // Slightly lighter for cards
@@ -17,6 +18,7 @@ const config: Config = {
         'hero-glow': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
+         spin: 'spin 4s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
