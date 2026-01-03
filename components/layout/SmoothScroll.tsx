@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
-export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+export default function SmoothScroll({ children }: { children: any }) {
   // options for that "premium" feel
   const lenisOptions = {
     lerp: 0.1,         // Linear interpolation (lower = smoother/slower)

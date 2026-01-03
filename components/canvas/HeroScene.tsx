@@ -4,16 +4,19 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.cjs";
+import type * as THREE from "three";
 
 function ParticleField(props: any) {
-  const ref = useRef<any>();
+  const ref = useRef<THREE.Points>(null);
   // Generate 5000 random points in a sphere
   const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
 
   useFrame((state, delta) => {
     // Rotate the cloud slowly
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    if (ref.current) {
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
+    }
   });
 
   return (
